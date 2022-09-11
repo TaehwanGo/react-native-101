@@ -42,3 +42,11 @@
 - expo init TaehwanGoWeather
   - blank a minimal app as clean as an empty canvas 를 선택
 - cd TaehwanGoWeather
+- expo login
+- npm run start
+
+## Recap
+
+- React native는 브라우저가 아닌 native 앱이다
+  - Java 같은 것을 설치해야되는 이유
+  - 앱을 만들고 앱을 app store에 내보낼 때 컴파일해야 되기 때문
