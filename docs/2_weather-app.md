@@ -103,3 +103,31 @@
   - 부모 컴포넌트 대비 현재 컴포넌트가 잡아먹는 비율
   - 만약 동일하게 잡는 컴포넌트가 동일한 depth에 존재한다면 그 갯수에 비례해서 화면이 분할됨
     - flex: 1 이 3개이면 각각 33.33% 씩 차지함
+
+## 2.5 ~ 2.6 Styles
+
+- 날씨 정보를 가져올 Open API
+  - https://openweathermap.org/
+- 날씨 앱 디자인
+  - https://dribbble.com/shots/14717133/attachments/6417271?mode=media
+
+### ScrollView
+
+- https://reactnative.dev/docs/scrollview
+- pagingEnabled : 스크롤 할 때 한 칸씩 움직이도록 함
+- showsHorizontalScrollIndicator : 가로 스크롤 바를 숨김
+
+### Element Inspector
+
+- 핸드폰을 흔들면 나옴
+- 또는 expo가 실행중인 터미널에 m 을 입력
+
+### Dimensions
+
+- https://reactnative.dev/docs/dimensions
+- 핸드폰 스크린 사이즈에 대한 API가 필요할 때
+
+### Thing to do
+
+- 유저의 위치 가져오기
+- 해당 위치를 API에 전송하고 날씨를 데이터 응답을 받기
