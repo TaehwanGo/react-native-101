@@ -131,3 +131,9 @@
 
 - 유저의 위치 가져오기
 - 해당 위치를 API에 전송하고 날씨를 데이터 응답을 받기
+
+## 2.7 Location
+
+- expo install expo-location
+- 먼저 권한을 요청해야 한다
+- https://docs.expo.dev/versions/latest/sdk/location/
