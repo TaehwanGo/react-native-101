@@ -76,3 +76,30 @@
     - https://docs.expo.dev/versions/latest/sdk/async-storage/
 
 - 나중에 expo가 지원하지 않는 기능을 사용하고 싶은 경우에 대해서 다룸
+
+## 시뮬레이터 설치
+
+- https://qnrjs42.blog/react-native/m1-arm64-setting
+
+## 2.4 Layout System
+
+### Flex box
+
+- 웹의 flex와 거의 비슷
+- React native에서 없는 display
+  - block, inline-block, grid
+- default가 flex라서 display: flex라고 해줄 필요가 없음
+- 바로 flexDirection을 설정 가능
+- flexDirection의 default는 "column"
+  - 웹에선 "row"
+- 가로로 크기가 넘어가도 scroll 되지 않음(브라우저가 아니기 때문)
+- Layout에선 width와 height은 안 씀
+
+  - 스크린 사이즈에 따라 다르게 보이기 때문에
+  - 반응형 디자인을 생각해야 함
+  - 아바타나 아이콘 같은 곳에선 쓸 수도 있음
+
+- flex
+  - 부모 컴포넌트 대비 현재 컴포넌트가 잡아먹는 비율
+  - 만약 동일하게 잡는 컴포넌트가 동일한 depth에 존재한다면 그 갯수에 비례해서 화면이 분할됨
+    - flex: 1 이 3개이면 각각 33.33% 씩 차지함
