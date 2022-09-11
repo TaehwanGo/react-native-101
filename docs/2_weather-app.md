@@ -137,3 +137,14 @@
 - expo install expo-location
 - 먼저 권한을 요청해야 한다
 - https://docs.expo.dev/versions/latest/sdk/location/
+
+## 2.8 Weather
+
+- https://openweathermap.org/api
+  - 회원가입 후 API 키를 받아야 한다
+- https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+
+### Loading spinner
+
+- ActivityIndicator
+  - https://reactnative.dev/docs/activityindicator
