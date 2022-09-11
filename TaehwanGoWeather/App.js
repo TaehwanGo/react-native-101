@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import * as Location from "expo-location";
 import { StatusBar } from "expo-status-bar";
+import { Fontisto } from "@expo/vector-icons";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
@@ -16,6 +17,19 @@ const { width: SCREEN_WIDTH } = Dimensions.get("window");
  * API키는 서버에 저장하는 것이 안전함
  */
 const API_KEY = "f0b3d43e2e0ebdfbcbac3507e3f75424";
+
+const weatherIcons = {
+  Clouds: "cloudy",
+  Clear: "day-sunny",
+  Thunderstorm: "lightning",
+  Drizzle: "rain",
+  Rain: "rain",
+  Snow: "snow",
+  Atmosphere: "fog",
+  Haze: "day-haze",
+  Mist: "dust",
+  Dust: "dust",
+};
 
 export default function App() {
   const [region, setRegion] = useState("");
@@ -77,9 +91,19 @@ export default function App() {
                 <Text style={styles.date}>
                   {new Date(day.dt * 1000).toString().substring(0, 10)}
                 </Text>
-                <Text style={styles.temp}>
-                  {parseFloat(day.temp.day).toFixed(1)}°C
-                </Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "flex-end",
+                    justifyContent: "space-around",
+                    width: "100%",
+                  }}
+                >
+                  <Text style={styles.temp}>
+                    {parseFloat(day.temp.day).toFixed(1)}°C
+                  </Text>
+                  <Fontisto name={weatherIcons[mainWeather]} size={52} />
+                </View>
                 <Text style={styles.description}>{mainWeather}</Text>
                 <Text style={styles.tinyText}>{description}</Text>
               </View>

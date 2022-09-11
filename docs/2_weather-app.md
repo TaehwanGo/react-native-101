@@ -148,3 +148,8 @@
 
 - ActivityIndicator
   - https://reactnative.dev/docs/activityindicator
+
+## 2.9 Icons
+
+- https://docs.expo.dev/guides/icons/
+  - https://icons.expo.fyi/
