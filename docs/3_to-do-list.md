@@ -116,3 +116,12 @@ console.log(Employee.firstname);
 ### Alert
 
 - https://reactnative.dev/docs/alert
+
+## 3.7 Recap
+
+## 3.8 Code challenge
+
+- [ ] 처음 앱을 켜면 마지막에 종료했을 때 탭이 보이도록 하기
+  - AsyncStorage
+- [ ] 완료 아이콘 및 기능 추가
+- [ ] 수정 아이콘 및 기능 추가
