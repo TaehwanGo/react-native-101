@@ -32,3 +32,21 @@
 
 - Pressable
   - 최근에 추가된 기능이 더 많아진 버튼
+
+## 3.2 TextInput
+
+- textarea같은 것은 없음
+- TextInput만 있는데 많은 props이 있음
+
+  - https://reactnative.dev/docs/textinput
+
+- placeholder
+- placeholderTextColor
+- onFocus
+- onChangeText
+- keyboardType : email-address, numeric, number-pad, ...
+- returnKeyType : done, go, next, search, send
+- secureTextEntry : 입력하는 텍스트를 동그란 점으로 표시, 비밀번호 입력 시 사용
+- multiline : 한줄 이상 입력하는 경우
+- autoCorrect : 자동 수정 여부 - default : true
+- autoCapitalize : sentences, words, none, characters

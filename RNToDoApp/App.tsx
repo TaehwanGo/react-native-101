@@ -1,30 +1,56 @@
 import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import {
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
-  TouchableHighlight,
-  TouchableWithoutFeedback,
-  Pressable,
+  TextInput,
 } from "react-native";
 import { theme } from "./color";
 
 export default function App() {
+  const [isWorking, setIsWorking] = useState(true);
+  const [text, setText] = useState("");
+  const work = () => setIsWorking(true);
+  const travel = () => setIsWorking(false);
+  const handleChangeText = (text: string) => {
+    setText(text);
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
       <View style={styles.header}>
-        <TouchableOpacity>
-          <Text style={styles.btnText}>Work</Text>
+        <TouchableOpacity onPress={work}>
+          <Text
+            style={{
+              ...styles.btnText,
+              color: isWorking ? "white" : theme.gray,
+            }}
+          >
+            Work
+          </Text>
         </TouchableOpacity>
-        <TouchableHighlight
-          onPress={() => console.log("log")}
-          // underlayColor="#DDDDDD"
-          activeOpacity={0.6}
-        >
-          <Text style={styles.btnText}>Travel</Text>
-        </TouchableHighlight>
+        <TouchableOpacity onPress={travel}>
+          <Text
+            style={{
+              ...styles.btnText,
+              color: !isWorking ? "white" : theme.gray,
+            }}
+          >
+            Travel
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <TextInput
+          onChangeText={handleChangeText}
+          value={text}
+          returnKeyType="send"
+          style={styles.input}
+          placeholder={isWorking ? "Add a To do" : "Where do you want to go?"}
+        />
       </View>
     </View>
   );
@@ -42,9 +68,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   btnText: {
-    // color: theme.gray,
-    color: "white",
     fontSize: 38,
     fontWeight: "600",
+  },
+  input: {
+    backgroundColor: "white",
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    marginTop: 20,
+    fontSize: 18,
   },
 });
