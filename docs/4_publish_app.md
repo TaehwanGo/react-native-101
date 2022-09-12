@@ -23,3 +23,29 @@
 
 - https://reactnative.dev/docs/platform
 - react-native의 Alert는 웹에서 동작하지 않음
+
+## 4.2 Building for App stores
+
+### App store
+
+- expo CLI를 이용
+
+  - 내 컴퓨터가 아닌 expo 서버에 있는 mac 또는 linux를 이용해서 빌드
+    - window에서도 ios 앱을 빌드할 수 있는 이유
+  - expo build:android
+    - 무료 플랜이라 그런지 느림
+    - https://expo.dev/accounts/taehwango/projects/RNToDoApp/builds/eb71ce71-a162-4079-a664-59751184a188
+
+### React native for Windows + macOS
+
+- 데스크탑 앱인 것 같음
+- https://microsoft.github.io/react-native-windows/
+
+### AR/VR applications using React Native
+
+- https://viro-community.readme.io/docs/overview
+
+### github deploy
+
+- gh-pages cli를 이용
+- gh-pages -d web-build
