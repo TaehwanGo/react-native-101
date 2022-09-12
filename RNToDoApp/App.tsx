@@ -10,6 +10,7 @@ import {
   TextInputSubmitEditingEventData,
   ScrollView,
   Alert,
+  Platform,
 } from "react-native";
 import { theme } from "./color";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -81,19 +82,26 @@ export default function App() {
     await saveToDos(newToDos);
   };
   const handleDeleteToDo = async (id: string) => {
-    Alert.alert("Delete To Do?", "Are you sure?", [
-      {
-        text: "Cancel",
-        style: "cancel",
-      },
-      {
-        text: "OK",
-        style: "destructive",
-        onPress: async () => {
-          await deleteToDo(id);
+    if (Platform.OS === "web") {
+      const ok = confirm("Are you sure you want to delete this to do?");
+      if (ok) {
+        deleteToDo(id);
+      }
+    } else {
+      Alert.alert("Delete To Do?", "Are you sure?", [
+        {
+          text: "Cancel",
+          style: "cancel",
         },
-      },
-    ]);
+        {
+          text: "OK",
+          style: "destructive",
+          onPress: async () => {
+            await deleteToDo(id);
+          },
+        },
+      ]);
+    }
   };
 
   useEffect(() => {
