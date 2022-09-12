@@ -50,3 +50,10 @@
 - multiline : 한줄 이상 입력하는 경우
 - autoCorrect : 자동 수정 여부 - default : true
 - autoCapitalize : sentences, words, none, characters
+- onSubmitEditing
+
+## 3.3 To Do List
+
+- Object hash map을 사용함
+  - array를 사용할 줄 알았는데 이렇게 하면 list를 렌더링할 때 어떻게 하는지 지켜봐야겠다
+  - 그리고 제거할 땐 filter가 아닌 다른 방법으로 할 것 같은데 그것도 궁금하다
