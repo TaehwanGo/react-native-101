@@ -49,3 +49,33 @@
 
 - gh-pages cli를 이용
 - gh-pages -d web-build
+
+## 4.3 Going Native
+
+- expo의 문제점
+
+  - 앱 설정에 관해서 많은 설정을 할 수 없음
+  - e.g.
+
+    - 블루투스
+      - https://github.com/dotintent/react-native-ble-plx
+      - https://www.npmjs.com/package/react-native-ble-plx
+
+  - expo는 expo가 만든 infrastructure를 제공
+    - app.json
+    - manifest.json 같은 것을 수정할 수 없음
+      - expo가 이런 것들을 숨겨놨음
+        - javascript 코드만 짜고 쉽게 앱을 만들게 ㅏㄴ들기 위해
+  - 매우 간단한 앱인데도 앱 용량이 너무 큼
+    - 200줄짜리 코드를 짜도 60mb
+    - 예를 들어 facebook SDK를 사용하지 않아도 포함됨
+
+- expo eject로 밖으로 꺼낼 수 있음
+  - 잘 사용 안함
+  - 대신 create-react-native-app {project-name} 을 사용
+    - https://reactnative.dev/blog/2017/03/13/introducing-create-react-native-app
+
+## 4.4 Conclusion
+
+- react native로 하나의 코드로 여러 플랫폼앱의 앱을 만들 수 있음
+- 아직 배울 것이 많다
