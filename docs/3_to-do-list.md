@@ -8,3 +8,27 @@
 - 프로젝트 생성
   - expo init RNToDoApp --npm
   - cd RNToDoApp
+  - npm run start
+
+## 3.1 Touchables
+
+### 버튼 종류
+
+- TouchableOpacity
+
+  - View와 비슷하지만 누르는 이벤트를 받을 수 있는 View라고 볼 수 있음
+  - 애니메이션 효과가 포함되어 있음
+    - 버튼을 눌렀을 때 약간 어두워졌다가 다시 밝아짐
+
+- TouchableHighlight
+
+  - 클릭했을 때 배경색이 바뀜
+  - onPress 를 설정해야 작동함
+  - underlayColor
+
+- TouchableWithoutFeedback
+
+  - 화면의 제일 위에서 발생하는 이벤트를 감지하지만 어떤 UI 변화도 없음
+
+- Pressable
+  - 최근에 추가된 기능이 더 많아진 버튼
