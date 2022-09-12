@@ -9,9 +9,11 @@ import {
   NativeSyntheticEvent,
   TextInputSubmitEditingEventData,
   ScrollView,
+  Alert,
 } from "react-native";
 import { theme } from "./color";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Fontisto } from "@expo/vector-icons";
 
 type Todo = {
   [id: string]: {
@@ -38,8 +40,6 @@ export default function App() {
         work: isWorking,
       },
     };
-    // const newToDos = Object.assign({}, toDos, newToDo);
-    // setToDos(newToDos);
     const newToDos = { ...toDos, ...newToDo };
     setToDos(newToDos);
     return newToDos;
@@ -47,7 +47,6 @@ export default function App() {
   const loadToDos = async () => {
     try {
       const toDos = await AsyncStorage.getItem(STORAGE_KEY);
-      console.log("toDos", toDos);
       if (toDos !== null) {
         setToDos(JSON.parse(toDos));
       }
@@ -66,7 +65,6 @@ export default function App() {
   const handleSubmitText = async (
     e: NativeSyntheticEvent<TextInputSubmitEditingEventData>
   ) => {
-    // console.log(e.nativeEvent.text);
     const text = e.nativeEvent.text;
     if (text === "") {
       return;
@@ -76,7 +74,27 @@ export default function App() {
     setText("");
     await saveToDos(newToDos);
   };
-  console.log(toDos);
+  const deleteToDo = async (id: string) => {
+    const newToDos = { ...toDos };
+    delete newToDos[id];
+    setToDos(newToDos);
+    await saveToDos(newToDos);
+  };
+  const handleDeleteToDo = async (id: string) => {
+    Alert.alert("Delete To Do?", "Are you sure?", [
+      {
+        text: "Cancel",
+        style: "cancel",
+      },
+      {
+        text: "OK",
+        style: "destructive",
+        onPress: async () => {
+          await deleteToDo(id);
+        },
+      },
+    ]);
+  };
 
   useEffect(() => {
     loadToDos();
@@ -122,6 +140,9 @@ export default function App() {
               toDo.work === isWorking ? (
                 <View key={id} style={styles.toDo}>
                   <Text style={styles.toDoText}>{toDo.text}</Text>
+                  <TouchableOpacity onPress={() => handleDeleteToDo(id)}>
+                    <Fontisto name="trash" size={16} color="white" />
+                  </TouchableOpacity>
                 </View>
               ) : null
             )}
@@ -163,6 +184,9 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 20,
     borderRadius: 15,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   toDoText: {
     fontSize: 16,

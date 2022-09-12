@@ -59,6 +59,8 @@
     - Object.keys 를 사용
     - 나는 Object.entries를 사용
   - 그리고 제거할 땐 filter가 아닌 다른 방법으로 할 것 같은데 그것도 궁금하다
+    - javascript delete operator를 사용
+      - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
 
 ## 3.4 Paint To do list
 
@@ -88,3 +90,29 @@
 
 - setItem : string(json 데이터)를 key와 함께 저장
 - getItem : 저장했던 string(json 데이터)를 key로 불러옴
+
+## 3.6 Delete
+
+- 삭제 버튼을 누르면 confirm 창으로 확인 후 삭제
+- AsyncStorage.getItem 동안 로딩 스피너 보여주기
+- javascript delete operator
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+
+```js
+const Employee = {
+  firstname: "John",
+  lastname: "Doe",
+};
+
+console.log(Employee.firstname);
+// expected output: "John"
+
+delete Employee.firstname;
+
+console.log(Employee.firstname);
+// expected output: undefined
+```
+
+### Alert
+
+- https://reactnative.dev/docs/alert
